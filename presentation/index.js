@@ -179,7 +179,16 @@ export default class Presentation extends React.Component {
           <CodePane lang="jsx" source={examples.stylesStyledComponents}/>
         </Slide>
 
-        {/* TODO: ADD VICTORY? */}
+        <Slide transition={["fade"]} bgColor="primary">
+          <Link target="_blank" href="http://formidable.com/open-source/victory/gallery">
+            <Heading size={2} textColor="secondary">
+              Victory
+            </Heading>
+            <Heading size={6} textColor="tertiary">
+              for charts
+            </Heading>
+          </Link>
+        </Slide>
 
         <Slide transition={["fade"]} bgColor="primary">
           <Heading size={2} textColor="tertiary">
@@ -206,7 +215,7 @@ export default class Presentation extends React.Component {
           <Heading size={3} lineHeight={1} textColor="secondary">
             react-navigation
           </Heading>
-          <Link href="https://reactnavigation.org/">
+          <Link href="https://reactnavigation.org/"  target="_blank" >
             <Heading size={6} lineHeight={3} textColor="tertiary">
               reactnavigation.org
             </Heading>
