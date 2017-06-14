@@ -33,6 +33,7 @@ const images = {
   jest: require("../assets/jest.png"),
   confusedMeme: require("../assets/confused_meme.jpg"),
   styleguidist: require("../assets/styleguidist.svg"),
+  obamaClapping: require("../assets/Obama-Clapping.gif"),
 };
 
 const examples = {
@@ -165,14 +166,14 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["fade"]} bgColor="tertiary">
-          <Heading size={5} lineHeight={3} textColor="primary">
+          <Heading size={5} lineHeight={1.5} textColor="primary">
             React Native
           </Heading>
           <CodePane lang="jsx" source={examples.stylesReactNative}/>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="tertiary">
-          <Heading size={5} lineHeight={3} textColor="primary">
+          <Heading size={5} lineHeight={1.5} textColor="primary">
             styled-components
           </Heading>
           <CodePane lang="jsx" source={examples.stylesStyledComponents}/>
@@ -261,6 +262,12 @@ export default class Presentation extends React.Component {
               React Native Web
             </Heading>
           </Link>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary" bgImage={images.obamaClapping}>
+          <Heading size={5} caps lineHeight={3} textColor="tertiary" style={{ marginTop: '6em' }}>
+            Thank You
+          </Heading>
         </Slide>
 
       </Deck>
