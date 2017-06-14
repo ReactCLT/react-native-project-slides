@@ -13,6 +13,7 @@ import {
   Slide,
   Image,
   CodePane,
+  Link,
   Text
 } from "spectacle";
 
@@ -30,6 +31,7 @@ require("spectacle/lib/themes/default/index.css");
 const images = {
   guy: require("../assets/guy.jpg"),
   jest: require("../assets/jest.png"),
+  confusedMeme: require("../assets/confused_meme.jpg"),
 };
 
 const examples = {
@@ -39,6 +41,7 @@ const examples = {
   enzymeTest: require("../examples/enzyme.test.example"),
   stylesReactNative: require("../examples/styles-rn.example"),
   stylesStyledComponents: require("../examples/styles-sc.example"),
+  reactNavigation: require("../examples/react-navigation.example"),
 };
 
 preloader(images);
@@ -81,9 +84,12 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
         
-        <Slide transition={["fade"]} bgColor="primary" caps>
-          <Image src={images.guy}/>
-        </Slide>
+        <Slide 
+          transition={["fade"]} 
+          bgColor="primary" 
+          caps 
+          bgImage={images.guy}
+        />
         
         <Slide transition={["fade"]} bgColor="secondary">
           <Heading size={2} textColor="tertiary" caps>
@@ -178,8 +184,47 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={2} textColor="secondary">
-            Navigation
+          <Text lineHeight={2} textColor="secondary">iOS Navigator</Text>
+          <Text lineHeight={2} textColor="tertiary">react-navigation</Text>
+          <Text lineHeight={2} textColor="secondary">native-navigation</Text>
+          <Text lineHeight={2} textColor="tertiary">react-native-navigation</Text>
+          <Text lineHeight={2} textColor="secondary">ex-navigation</Text>
+          <Text lineHeight={2} textColor="tertiary">react-native-router-flux</Text>
+        </Slide>
+
+        <Slide 
+          transition={["fade"]}
+          bgColor="primary" 
+          bgImage={images.confusedMeme}
+        />
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={3} lineHeight={1} textColor="secondary">
+            react-navigation
+          </Heading>
+          <Link href="https://reactnavigation.org/">
+            <Heading size={6} lineHeight={3} textColor="tertiary">
+              reactnavigation.org
+            </Heading>
+          </Link>
+        </Slide>
+        
+        <Slide transition={["fade"]} bgColor="primary">
+          <CodePane lang="jsx" source={examples.reactNavigation}/>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={5} lineHeight={1} textColor="tertiary">
+            Redux integration!
+          </Heading>
+          <Heading size={3} lineHeight={2} textColor="tertiary">
+            👍
+          </Heading>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={4} lineHeight={1} textColor="secondary">
+            Other's experiences?
           </Heading>
         </Slide>
 

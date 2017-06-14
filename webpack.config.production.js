@@ -11,7 +11,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: "/dist/"
+    publicPath: "./dist/"
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -29,6 +29,10 @@ module.exports = {
     loaders: [{
       test: /\.md$/,
       loader: "html-loader!markdown-loader?gfm=false"
+    }, {
+      test: /\.example$/,
+      loaders: ["raw-loader"],
+      include: __dirname
     }, {
       test: /\.(js|jsx)$/,
       exclude: /node_modules/,
