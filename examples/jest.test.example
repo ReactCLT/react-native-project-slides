@@ -1,0 +1,21 @@
+import axios from 'axios';
+import { getUsers } from './getUsers';
+
+describe('getUsers', () => {
+  it('should get users', async () => {
+
+    const spy = jest.spyOn(axios, 'get')
+      .mockImplementation(() => {
+        return [ 'Joe', 'Brandon', 'Mark' ];
+      });
+
+    const users = await getUsers();
+
+    expect(spy).toHaveBeenCalledWith('/users');
+  
+    expect(users).toEqual(
+      [ 'Joe', 'Brandon', 'Mark' ]
+    );
+
+  });
+});

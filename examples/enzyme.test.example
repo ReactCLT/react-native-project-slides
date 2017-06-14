@@ -1,0 +1,18 @@
+import { shallow } from 'enzyme';
+import Example from './Example';
+import React from 'react';
+
+describe('<Example/>', () => {
+  it('should respond to click', () => {
+    
+    const wrapper = shallow( <Example/> );
+    const text = wrapper.find('Text');
+
+    expect(wrapper.state('pressed')).toBe(false);
+
+    text.simulate('press');
+
+    expect(wrapper.state('pressed')).toBe(true);
+
+  });
+});

@@ -1,0 +1,22 @@
+import { Text } from 'react-native';
+import React, { Component } from 'react';
+
+class Example extends Component {
+  state = {
+    pressed: false
+  };
+  press = () => {
+    this.setState({
+      pressed: true
+    });
+  };
+  render() {
+    return (
+      <Text onPress={this.press}>
+        {this.state.pressed ? 'Pressed' : 'Not Pressed'}
+      </Text>
+    );
+  }
+}
+
+export default Example;

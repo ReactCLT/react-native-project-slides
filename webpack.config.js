@@ -46,6 +46,11 @@ module.exports = {
       exclude: /node_modules/,
       include: __dirname
     }, {
+      test: /\.example$/,
+      loaders: ["raw-loader"],
+      include: __dirname
+    }, {
+    }, {
       test: /\.css$/,
       loaders: ["style-loader", "raw-loader"],
       include: __dirname

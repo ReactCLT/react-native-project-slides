@@ -11,6 +11,8 @@ import {
   List,
   Quote,
   Slide,
+  Image,
+  CodePane,
   Text
 } from "spectacle";
 
@@ -20,25 +22,31 @@ import preloader from "spectacle/lib/utils/preloader";
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
 
-// Require CSS
+  // Require CSS
 require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
 
 
 const images = {
-  city: require("../assets/city.jpg"),
-  kat: require("../assets/kat.png"),
-  logo: require("../assets/formidable-logo.svg"),
-  markdown: require("../assets/markdown.png")
+  guy: require("../assets/guy.jpg"),
+  jest: require("../assets/jest.png"),
+};
+
+const examples = {
+  jest: require("../examples/jest.example"),
+  jestTest: require("../examples/jest.test.example"),
+  enzyme: require("../examples/enzyme.example"),
+  enzymeTest: require("../examples/enzyme.test.example"),
+  stylesReactNative: require("../examples/styles-rn.example"),
+  stylesStyledComponents: require("../examples/styles-sc.example"),
 };
 
 preloader(images);
 
 const theme = createTheme({
-  primary: "white",
-  secondary: "#1F2022",
-  tertiary: "#03A9FC",
-  quartenary: "#CECECE"
+  primary: "#070709",
+  secondary: "#61DAFB",
+  tertiary: "#FAFAFA"
 }, {
   primary: "Montserrat",
   secondary: "Helvetica"
@@ -48,38 +56,133 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
+        
         <Slide transition={["zoom"]} bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Spectacle Boilerplate
+            React Native
           </Heading>
           <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            open the presentation/index.js file to get started
+            and surrounding technolgies
           </Text>
         </Slide>
+        
+        <Slide transition={["fade"]} bgColor="tertiary" caps>
+          <Heading size={2} textColor="primary">
+            Buffet Style
+          </Heading>
+          <Heading size={6} textColor="secondary">
+            Have a comment? Speak up!
+          </Heading>
+        </Slide>
+        
         <Slide transition={["fade"]} bgColor="tertiary">
-          <Heading size={6} textColor="primary" caps>Typography</Heading>
-          <Heading size={1} textColor="secondary">Heading 1</Heading>
-          <Heading size={2} textColor="secondary">Heading 2</Heading>
-          <Heading size={3} textColor="secondary">Heading 3</Heading>
-          <Heading size={4} textColor="secondary">Heading 4</Heading>
-          <Heading size={5} textColor="secondary">Heading 5</Heading>
-          <Text size={6} textColor="secondary">Standard text</Text>
+          <Heading size={2} textColor="primary" caps>
+            Lets dig in!
+          </Heading>
         </Slide>
+        
+        <Slide transition={["fade"]} bgColor="primary" caps>
+          <Image src={images.guy}/>
+        </Slide>
+        
+        <Slide transition={["fade"]} bgColor="secondary">
+          <Heading size={2} textColor="tertiary" caps>
+            Testing
+          </Heading>
+        </Slide>
+        
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>Standard List</Heading>
-          <List>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
-          </List>
+          <Heading size={1} textColor="secondary" caps>
+            ♥
+          </Heading>
         </Slide>
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
-          </BlockQuote>
+        
+        <Slide transition={["fade"]} bgColor="#3B3738">
+          <Image src={images.jest} height="350"/>
         </Slide>
+        
+        <Slide transition={["fade"]} bgColor="primary">
+          <Text lineHeight={2} textColor="secondary">Preinstalled with React Native</Text>
+          <Text lineHeight={2} textColor="tertiary">Backed by Facebook</Text>
+          <Text lineHeight={2} textColor="secondary">All in One Tool</Text>
+          <Text lineHeight={2} textColor="tertiary">Ease of Use</Text>
+        </Slide>
+        
+        <Slide transition={["fade"]} bgColor="primary">
+          <CodePane lang="jsx" source={examples.jest}/>
+        </Slide>
+        
+        <Slide transition={["fade"]} bgColor="primary">
+          <CodePane lang="jsx" source={examples.jestTest}/>
+        </Slide>
+        
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={2} caps lineHeight={1} textColor="secondary">
+            Enzyme
+          </Heading>
+        </Slide>
+        
+        <Slide transition={["fade"]} bgColor="primary">
+          <CodePane lang="jsx" source={examples.enzyme}/>
+        </Slide>
+        
+        <Slide transition={["fade"]} bgColor="primary">
+          <CodePane lang="jsx" source={examples.enzymeTest}/>
+        </Slide>
+        
+        <Slide transition={["fade"]} bgColor="tertiary">
+          <Heading size={3} lineHeight={1} textColor="primary">
+            State Management
+          </Heading>
+        </Slide>
+        
+        <Slide transition={["fade"]} bgColor="tertiary">
+          <Heading size={2} caps lineHeight={1} textColor="secondary">
+            Redux
+          </Heading>
+          <Heading size={5} lineHeight={3} textColor="primary">
+            Anyone using something else?
+          </Heading>
+        </Slide>
+        
+        <Slide transition={["fade"]} bgColor="secondary">
+          <Heading size={3} lineHeight={1} textColor="tertiary">
+            Styling
+          </Heading>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary">
+          <Heading size={4} lineHeight={1} textColor="primary">
+            styled-components
+          </Heading>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary">
+          <Heading size={5} lineHeight={3} textColor="primary">
+            React Native
+          </Heading>
+          <CodePane lang="jsx" source={examples.stylesReactNative}/>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary">
+          <Heading size={5} lineHeight={3} textColor="primary">
+            styled-components
+          </Heading>
+          <CodePane lang="jsx" source={examples.stylesStyledComponents}/>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={2} textColor="tertiary">
+            Navigation
+          </Heading>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={2} textColor="secondary">
+            Navigation
+          </Heading>
+        </Slide>
+
       </Deck>
     );
   }
