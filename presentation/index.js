@@ -32,6 +32,7 @@ const images = {
   guy: require("../assets/guy.jpg"),
   jest: require("../assets/jest.png"),
   confusedMeme: require("../assets/confused_meme.jpg"),
+  styleguidist: require("../assets/styleguidist.svg"),
 };
 
 const examples = {
@@ -177,6 +178,8 @@ export default class Presentation extends React.Component {
           <CodePane lang="jsx" source={examples.stylesStyledComponents}/>
         </Slide>
 
+        {/* TODO: ADD VICTORY? */}
+
         <Slide transition={["fade"]} bgColor="primary">
           <Heading size={2} textColor="tertiary">
             Navigation
@@ -226,6 +229,38 @@ export default class Presentation extends React.Component {
           <Heading size={4} lineHeight={1} textColor="secondary">
             Other's experiences?
           </Heading>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={3} caps lineHeight={1} textColor="tertiary">
+            Documentation
+          </Heading>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          {/* TODO: REPLACE WITH ACTUAL LINK */}
+          <Link href="">
+            <Heading size={4} lineHeight={1} textColor="secondary">
+              Styleguide
+            </Heading>
+          </Link>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Link href="https://react-styleguidist.js.org/">
+            <Image src={images.styleguidist} height="250"/>
+            <Heading size={5} lineHeight={3} textColor="tertiary">
+              React Styleguidist
+            </Heading>
+          </Link>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Link href="https://github.com/necolas/react-native-web">
+            <Heading size={4} lineHeight={3} textColor="secondary">
+              React Native Web
+            </Heading>
+          </Link>
         </Slide>
 
       </Deck>

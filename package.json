@@ -6,7 +6,6 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js",
-    "lint": "eslint --ext .js,.jsx .",
     "deploy": "npm run clean & npm run build && node deploy.js",
     "start": "cross-env NODE_ENV=development node server.js"
   },
@@ -36,11 +35,6 @@
     "babel-runtime": "^6.18.0",
     "cross-env": "^1.0.7",
     "css-loader": "^0.23.0",
-    "eslint": "^3.8.0",
-    "eslint-config-formidable": "^2.0.1",
-    "eslint-plugin-filenames": "^1.1.0",
-    "eslint-plugin-import": "^2.0.1",
-    "eslint-plugin-react": "^6.4.1",
     "express": "^4.13.3",
     "file-loader": "^0.9.0",
     "gh-pages": "^1.0.0",
@@ -54,7 +48,6 @@
     "redbox-react": "^1.2.0",
     "rimraf": "^2.4.4",
     "style-loader": "^0.13.0",
-    "surge": "latest",
     "url-loader": "^0.5.6",
     "webpack": "2.2.0",
     "webpack-dev-middleware": "^1.8.4",
